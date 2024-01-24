@@ -14,9 +14,13 @@ import Dashboard from './components/Dashboard';
 import Addevent from './components/Addevent';
 import ProfilePage from './components/ProfilePage';
 import EditProfile from './components/EditProfile';
+import { useEffect } from 'react';
 
 function App() {
   return (
+    useEffect(() => {
+    document.title = 'Eventine';
+  }, []);
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<HomePage />} />
