@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import HomePage from './components/HomePage';
 import Signin from './components/Signin';
@@ -14,13 +15,13 @@ import Dashboard from './components/Dashboard';
 import Addevent from './components/Addevent';
 import ProfilePage from './components/ProfilePage';
 import EditProfile from './components/EditProfile';
-import { useEffect } from 'react';
 
 function App() {
-  return (
     useEffect(() => {
     document.title = 'Eventine';
   }, []);
+  
+  return (
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<HomePage />} />
