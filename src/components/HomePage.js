@@ -120,7 +120,7 @@ const HomePage = () => {
             ))}
           </Box>
 
-          <Search>
+          {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -128,14 +128,15 @@ const HomePage = () => {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search>
+          </Search> */}
 
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
             <ul className='events'>
-              <li><Link to="/AdminSignin">Create Event</Link></li>
+            <li><Link to="/">About</Link></li>
+            <li><Link to="/Contact">Contact</Link></li>
+            <li><Link to="/AdminSignin">Create Event</Link></li>
             <li><Link to={'/Events'}>Events</Link></li>
-            <li>
-            <Link to='/Signin'>Login</Link>
+            <li><Link to='/Signin'>Login</Link>
               </li>
               </ul>
           </Box>
