@@ -104,10 +104,9 @@ const [selectedImage, setSelectedImage] = useState(null);
   const fileInputRef = React.createRef();
 
   const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setSelectedImage(file);
-
-    // You can perform additional actions with the selected file if needed
+    const files = e.target.files;
+    const selectedFiles = Array.from(files);
+    setSelectedImage(selectedFiles);
   };
 
   const handleButtonClick = () => {
@@ -134,7 +133,7 @@ const [selectedImage, setSelectedImage] = useState(null);
   return (<>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} sx={{ backgroundColor: 'darkcyan' }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -320,25 +319,32 @@ type="number"
     variant="outlined"
     name="phone"
     sx={{marginTop:'20px'}}
-  />
+/>
 
 <div>
-      <input
-        type="file"
-        accept="image/*"
-        style={{ display: 'none' }}
-        ref={fileInputRef}
-        onChange={handleFileChange}
-      />
-      <Button variant="contained" onClick={handleButtonClick} sx={{ backgroundColor: '#6bb8ef', color: 'black',marginTop:'20px' }}>
-        Image Upload
-      </Button>
-      {selectedImage && (
-        <div>
-          Filename: {selectedImage.name}
-        </div>
-      )}
+  <input
+    type="file"
+    accept="image/*"
+    style={{ display: 'none' }}
+    ref={fileInputRef}
+    onChange={handleFileChange}
+    multiple 
+  />
+  <Button variant="contained" onClick={handleButtonClick} sx={{ backgroundColor: '#6bb8ef', color: 'black', marginTop: '20px' }}>
+    Image Upload
+  </Button>
+  {selectedImage && selectedImage.length > 0 && (
+    <div>
+      <div>Selected Images:</div>
+      <ul>
+        {selectedImage.map((image, index) => (
+          <li key={index}>Filename: {image.name}</li>
+        ))}
+      </ul>
     </div>
+)}
+
+</div>
 
     <Link to='/Events'>
     <Button type='submit' sx={{ m: 0, paddingTop:'10px',backgroundColor:'darkcyan', color:'black',marginTop:'25px' }} 
