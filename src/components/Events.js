@@ -42,19 +42,43 @@ function Events() {
          },
          {
           id:4,
-            imgUrl: 'https://th.bing.com/th/id/R.1585d4b82d354004090f776763ac33e6?rik=UnWPo29HCuvVqw&riu=http%3a%2f%2fwww.disneytouristblog.com%2fwp-content%2fuploads%2f2015%2f12%2fwalt-disney-world-christmas-pictures-034.jpg&ehk=h1UY89moBKrNXXXEIhtQvW1zeC2IKIyOwTPVtnLP4FM%3d&risl=&pid=ImgRaw&r=0',
-            title: 'Christmas Carol',
-            address: 'Prozon Mall, Coimbatore, Tamil Nadu 641018, India',
-            date: '25 Dec 2023',
-            category: 'Events',
-         },
-         {
-          id:5,
             imgUrl: 'https://static.chethams.com/app/uploads/sites/4/2023/05/s7ax2147r1fhu5i3020230516104913.jpg',
             title: 'Motta Maadi Music',
             address: 'Hindustan Arts&Science, Coimbatore, Tamil Nadu 641018, India',
             date: '29 Dec 2023',
             category: 'Music Show',
+         },
+         {
+          id:5,
+            imgUrl: 'https://www.ritzmagazine.in/wp-content/uploads/2019/02/India-Thaikkudam-Bridge-Navarasam-e1549112426438.jpg',
+            title: 'Thaikkudam Bridge - Navarasam',
+            address: 'Hindustan Arts & Science College , Avinashi Rd, behind Nava India, Udayampalayam, Coimbatore, Tamil Nadu 641028',
+            date: '5 Feb 2024',
+            category: 'Music Show',
+         },
+         {
+          id:6,
+            imgUrl: 'https://d1fdloi71mui9q.cloudfront.net/KEt4SntoQxGUNru0yRQA_zwY0iML31jLEOYW4',
+            title: 'Vikkals of Vikram',
+            address: 'Hindusthan College of Arts & Science Nursery Block, Udayampalayam, Coimbatore, Tamil Nadu 641028, India',
+            date: '16 Mar 2024',
+            category: 'Comedy Show',
+         },
+         {
+          id:7,
+            imgUrl: 'https://cdn.sporfy.com/pictures/organization/ORG202312342154623146Vq0Bara5/events/EVT2023123421612MwTd/XNj4C98W-desktop_icon.JPG',
+            title: 'NEEYE OLI',
+            address: 'Jawaharlal Nehru Stadium Raja Muthiah Rd, Kannappar Thidal, Periyamet, Chennai, Tamil Nadu 600003',
+            date: '10 Feb 2024',
+            category: 'Music Show',
+         },
+         {
+          id:8,
+            imgUrl: 'https://cdn-az.allevents.in/events3/banners/558cc08dc10894c2ddbf942c979f327ca6759eb98220dc407b3640a1d243ea18-rimg-w851-h315-gmir.jpg?v=1706377461',
+            title: 'ONE PEOPLE FESTIVAL 2024',
+            address: 'Mahabalipuram, Tamil Nadu, India - 641018',
+            date: '10 Feb, 2024 - 11 Feb, 2024',
+            category: 'Meetup',
          },
        ];
 
@@ -96,22 +120,22 @@ function Events() {
         <Grid container spacing={1}>
   {cardData.map((data) => (
     <Grid item xs={12} sm={6} md={4} key={data.id}>
-      <Card key={data.id} sx={{ maxWidth: 350, marginLeft: '40px', marginBottom: '10px' }}>
+      <Card key={data.id} sx={{ maxWidth: 350, marginLeft: '40px', marginBottom: '30px' }}>
         <CardMedia component="img" alt="new year party" height="140" image={data.imgUrl} />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {data.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {data.address}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {data.date}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {data.category}
-          </Typography>
-        </CardContent>
+        <CardContent sx={{ height: '120px', overflow: 'hidden' }}>
+  <Typography gutterBottom variant="h5" component="div" sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+    {data.title}
+  </Typography>
+  <Typography variant="body2" color="text.secondary">
+    {data.address}
+  </Typography>
+  <Typography variant="body2" color="text.secondary">
+    {data.date}
+  </Typography>
+  <Typography variant="body2" color="text.secondary">
+    {data.category}
+  </Typography>
+</CardContent>
         <CardActions>
         <Button size="small" onClick={() => handleDetailsClick(data.id)}>Details</Button>
           {/* <Link to='/Details'><Button size="small">Book Tickets</Button></Link> */}
