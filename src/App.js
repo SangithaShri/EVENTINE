@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import HomePage from './components/HomePage';
 import Signin from './components/Signin';
@@ -10,17 +9,18 @@ import AdminSignin from './components/AdminSignin';
 import FrontPage from './components/FrontPage';
 import Eve3 from './components/3';
 import Eve4 from './components/4';
-import Eve5 from './components/5';
 import Dashboard from './components/Dashboard';
 import Addevent from './components/Addevent';
 import ProfilePage from './components/ProfilePage';
 import EditProfile from './components/EditProfile';
+import { useEffect } from 'react';
+import Bookings from './components/Bookings';
+import Contact from './components/Contact';
 
 function App() {
-    useEffect(() => {
+  useEffect(() => {
     document.title = 'Eventine';
   }, []);
-  
   return (
     <BrowserRouter>
     <Routes>
@@ -34,11 +34,12 @@ function App() {
       <Route path='/FrontPage' element={<FrontPage />} />
       <Route path='/3' element={<Eve3 />} />
       <Route path='/4' element={<Eve4 />} />
-      <Route path='/5' element={<Eve5 />} />
       <Route path='/Dashboard' element={<Dashboard />} />
       <Route path='/Addevent' element={<Addevent />} />
       <Route path='/ProfilePage' element={<ProfilePage />} />
       <Route path='/EditProfile' element={<EditProfile />} />
+      <Route path='/Bookings' element={<Bookings />} />
+      <Route path='/Contact' element={<Contact />} />
     </Routes>
     </BrowserRouter>
   );
