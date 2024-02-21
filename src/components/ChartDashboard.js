@@ -109,7 +109,6 @@ const devices = [
   
     return (
       <g>
-        {/* Display percentage */}
         <text x={x} y={y - 10} fill="white" textAnchor="middle" dominantBaseline="central">
           {`${(percent * 100).toFixed(0)}%`}
         </text>
