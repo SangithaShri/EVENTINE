@@ -122,7 +122,7 @@ const Eve1 = () => {
 <React.Fragment>
       <CssBaseline />
       <Container maxWidth="sm">
-        <Box sx={{ bgcolor: '#cfe8fc', height: '90vh',marginTop:'50px',borderRadius:'25px' }}>
+        <Box sx={{ bgcolor: '#cfe8fc', height: '90vh',marginTop:'50px',borderRadius:'20px' }}>
         <div style={{ textAlign: 'center',paddingTop:'5px' }}>
           <h1>LE MOSS</h1>
           <h3>Description</h3>
